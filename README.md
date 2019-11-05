@@ -46,12 +46,12 @@ app
 假设有如上的一个文件: `test.ts`， 你可以这么写
 
 ```typescript
-import { Get, Query, Param, Controller } from '../../src';
-import { ServiceOfCore } from '../../services';
+import { Get, Query, Param, Controller } from 'qzx-controller-express';
+import { ServiceOfCore } from '../../services'; // 一个依赖注入的服务
 
 @Controller()
 export default class {
-  constructor(private $core: ServiceOfCore) {}
+  constructor(private $core: SomneService) {} // 依赖注入
   @Get('aaa')
   index() {
     return 'bbb';
@@ -77,3 +77,23 @@ POST `/test/ttt?name=123` body {sss: 1111} => '1231111'
 GET `/test/aaa` => 'bbb'
 
 GET `/test/asd/qianzhixiang/dd/1` - 1: qianzhixiang
+
+### 依赖注入
+
+眼睛尖的同学已经发现上面有个疑惑，就是这个 ServiceCore 是个啥。
+
+这个其实就是一个依赖注入，依赖注入是啥：其实就是一个单例。
+
+我们的插件会自动的实例化 constructor 里面的各种属性，不需要手动的去装载。
+
+`service/index.ts`
+
+```typescript
+import { Injectable } from 'qzx-controller-express';
+@Injectable()
+export class SomneService {
+  name: string = '121221';
+  age: number = 12;
+  run() {}
+}
+```
