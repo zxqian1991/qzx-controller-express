@@ -1,0 +1,35 @@
+{
+  "name": "qzx-controller-express",
+  "version": "1.0.0",
+  "description": "decorators based on express and typescript",
+  "main": "dist/index.js",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "qzx-ioc": "^1.1.6",
+    "typescript": "^3.6.4",
+    "tsc": "^1.20150623.0",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && tsc -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxqian1991/qzx-controller-express.git"
+  },
+  "keywords": [
+    "typescript",
+    "router",
+    "express",
+    "decorator"
+  ],
+  "author": "qianzhixiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zxqian1991/qzx-controller-express/issues"
+  },
+  "homepage": "https://github.com/zxqian1991/qzx-controller-express#readme"
+}
